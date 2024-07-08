@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 a {
+  color: #595add;
+  size: 1rem;
+}
+
+.icon {
+  color: #595add;
+}
+
+.top-bar {
+  width: 1320px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: end;
+  padding: 10px;
+}
+.top-bar .text {
+  color: #403e66;
+  font-size: 15px;
+}
+
+nav {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+nav .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+nav .nav-logo img {
+  width: 20px;
+}
+nav .nav-logo p {
+  font-size: 15px;
+  color: #3e4449;
+}
+nav .nav-items {
+  display: flex;
+  gap: 30px;
+}
+nav .nav-items li a {
+  padding: 10px;
+}
+nav .nav-items li a:hover {
+  color: #1ab0dc;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+.hero-container .hero-text p {
+  font-weight: 500;
+  color: #403e66;
+  font-size: 45px;
+  font-weight: 600;
+}
+.hero-container .hero-text span {
+  font-weight: 600;
+  color: #403e66;
+  font-size: 45px;
+}
+.hero-container .hero-text button {
+  background: #595add;
+  width: 200px;
+  text-align: center;
+  height: 50px;
+  margin-top: 20px;
+  color: #403e66;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  justify-content: center;
+}
+.hero-container .hero-text button p {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+.hero-container .hero-text button svg {
+  width: 24px;
+  height: 24px;
+}
+.hero-container .hero-img img {
+  box-shadow: 0px 10px 8px rgb(0, 0, 0);
+  width: 500px;
+  height: 390px;
+}
+
+#story {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#story h1 {
+  text-align: center;
+  color: #403e66;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+#story .story-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+#story .story-container .story-text {
+  max-width: 600px;
+}
+#story .story-container .story-text .title {
+  color: #686592;
+  font-style: italic;
+  font-size: 20px;
+}
+#story .story-container .story-text .paragrah-1 {
+  padding-top: 35px;
+}
+#story .story-container .story-text .paragrah-2 {
+  padding-top: 40px;
+}
+#story .story-container .story-text button {
+  border: none;
+  background: none;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+#banner {
+  background: linear-gradient(to right, #284a87, #1ab0dc);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 80px;
+}
+#banner h1 {
+  color: #fff;
+  font-size: 28px;
+  max-width: 300px;
+  letter-spacing: 2px;
+}
+#banner .banner-button {
+  display: flex;
+  gap: 30px;
+}
+#banner button {
+  padding: 12px 50px;
+  font-weight: 200px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  background-color: black;
+}
+
+#about-app {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#about-app .about-text {
+  max-width: 580px;
+}
+#about-app .about-text .title {
+  color: #403e66;
+  padding-bottom: 40px;
+}
+#about-app .about-text .para-1 {
+  padding-bottom: 35px;
+}
+#about-app .about-text .para-2 {
+  padding-bottom: 35px;
+}
+#about-app .about-text button {
+  margin-top: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: 100;
+}
+#about-app .about-img {
+  width: 500px;
+}
+
+#workflow {
+  padding-bottom: 50px;
+}
+#workflow .title {
+  color: #403e66;
+  text-align: center;
+  font-size: 30px;
+}
+#workflow .workflow-card {
+  display: flex;
+  gap: 20rem;
+  justify-content: center;
+  margin-top: 70px;
+}
+#workflow .workflow-card .card {
+  color: #545185;
+  text-align: center;
+}
+#workflow .workflow-card .card h1 {
+  font-size: 40px;
+}
+#workflow .workflow-card .card span {
+  font-size: 20px;
+}
+#workflow .workflow-card .card p {
+  color: #b1b0ce;
+}
+
+#memory {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+}
+#memory .title {
+  color: #403e66;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+#memory .memory-link ul {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+#memory .memory-link li a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+#memory .memory-link li a:hover {
+  color: #1ab0dc;
+}
+#memory .memory-link li a.active {
+  color: #1ab0dc;
+  font-weight: bold;
+}
+#memory .memory-photo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+#memory .memory-photo .img img {
+  width: 100%;
+  height: auto;
+}
+
+#testimonials {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+#testimonials .title {
+  color: #403e66;
+  padding-bottom: 40px;
+  text-align: center;
+}
+#testimonials .testimonials-slider {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#testimonials .testimonials-slider .img {
+  width: 100px;
+}
+#testimonials .testimonials-slider .text-container .name {
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+#testimonials .testimonials-slider .text-container .text {
+  max-width: 700px;
+}
+#testimonials .slider-dot {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+#testimonials .slider-dot .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #dddddd;
+}
+#testimonials .slider-dot .dot-2 {
+  background-color: #1ab0dc;
+}
+
+#faq {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#faq .title {
+  color: #403e66;
+  text-align: center;
+  font-size: 30px;
+}
+#faq .faq-content {
+  margin-top: 30px;
+  font-size: 20px;
+}
+#faq .faq-content .faq-q {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  border-bottom: 1px solid #ebebeb;
+}
+#faq .faq-content .faq-q-2 {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+footer #footer {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5f8fc;
+}
+footer #footer .footer-1 {
+  max-width: 200px;
+}
+footer #footer .footer-1 .title {
+  font-size: 38px;
+  letter-spacing: 2px;
+  padding-bottom: 15px;
+  color: #403e66;
+}
+footer #footer .footer-1 .title-1 {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #403e66;
+}
+footer #footer .footer-1 .paragrah {
+  width: 250px;
+  font-size: 14px;
+  color: #72708e;
+}
+footer #footer .footer-2 .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #403e66;
+}
+footer #footer .footer-2 ul {
+  padding-top: 20px;
+}
+footer #footer .footer-2 ul li {
+  padding-top: 10px;
+}
+footer #footer .footer-2 ul li a {
+  font-size: 14px;
+  color: #9b99b8;
+}
+footer #footer .footer-2 .contact {
+  padding-top: 20px;
+}
+footer #footer .footer-2 .address {
+  padding-top: 20px;
+  width: 230px;
+  font-size: 14px;
+}
+footer #footer .footer-2 .social {
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+footer #footer .footer-2 .phone {
+  font-weight: 600;
+}
+footer #footer .footer-2 .phone span {
+  font-weight: 300;
+}
+footer #footer .footer-2 .email {
+  font-weight: 600;
+}
+footer #footer .footer-2 .email span {
+  font-weight: 300;
+}
+footer #footer .footer-3 .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #403e66;
+}
+footer #footer .footer-3 iframe {
+  padding-top: 20px;
+}
+footer .date {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+footer .date p {
+  font-size: 14px;
+}
+footer .date p span {
+  font-weight: 500;
+}
