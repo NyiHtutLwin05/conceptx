@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px dotted #efefef;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      h1 {
+        a {
+          color: black;
+          size: 1rem;
+        }
+      }
+      .top-bar {
+        width: 1240px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: end;
+        padding: 10px;
+      }
+
+      .top-bar .text {
+        color: black;
+        font-size: 15px;
+      }
+      nav {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      nav.fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0px;
+        background-color: white;
+        margin-top: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: top 0.3s ease;
+      }
+
+      @media (max-width: 1024px) {
+        nav {
+          margin-top: 10px;
+        }
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-logo img {
+        width: 20px;
+      }
+
+      .nav-logo p {
+        font-size: 15px;
+        color: #3e4449;
+      }
+
+      .nav-items ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-items ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+      }
+
+      .nav-items ul li a:hover {
+        color: #1ab0dc;
+      }
+
+      .nav-items ul li a.active {
+        color: #1ab0dc;
+      }
+
+      @media (max-width: 1024px) {
+        .nav-items {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 250px;
+          height: 100%;
+          background-color: rgba(48, 46, 77, 0.9);
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          transition: left 0.3s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          padding-top: 50px;
+          padding-left: 20px;
+          color: white;
+        }
+
+        .nav-items ul {
+          color: white;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .nav-items ul li a {
+          color: white;
+        }
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      @media (max-width: 1024px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-top: 20px;
+        }
+      }
+
+      nav.open .nav-items {
+        left: 0;
+      }
+
+      nav.open .hamburger .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      nav.open .hamburger .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      nav.open .hamburger .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      @media (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+      }
+      footer #footer {
+        padding-top: 50px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f5f8fc;
+      }
+
+      @media (max-width: 768px) {
+        footer #footer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+        }
+      }
+
+      .footer-1 {
+        max-width: 200px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-1 {
+          max-width: 300px;
+        }
+      }
+
+      .footer-1 .title {
+        font-size: 38px;
+        letter-spacing: 2px;
+        padding-bottom: 15px;
+        color: #403e66;
+      }
+
+      .footer-1 .title-1 {
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #403e66;
+      }
+
+      .footer-1 .paragrah {
+        width: 250px;
+        font-size: 14px;
+        line-height: 25px;
+        color: #72708e;
+      }
+
+      .footer-2 .title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #403e66;
+      }
+
+      .footer-2 ul {
+        padding-top: 20px;
+      }
+
+      .footer-2 ul li {
+        padding-top: 10px;
+      }
+
+      .footer-2 ul li a {
+        font-size: 14px;
+        color: #9b99b8;
+      }
+
+      .footer-2 .contact {
+        padding-top: 20px;
+      }
+
+      .footer-2 .address {
+        padding-top: 10px;
+        width: 230px;
+        font-weight: 300;
+        padding-bottom: 20px;
+      }
+
+      .footer-2 .social {
+        padding-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-2 .phone {
+        font-weight: 400;
+        padding-top: 5px;
+      }
+
+      .footer-2 .phone span {
+        font-weight: 300;
+      }
+
+      .footer-2 .email {
+        font-weight: 400;
+        padding-top: 5px;
+      }
+
+      .footer-2 .email span {
+        font-weight: 300;
+      }
+
+      @media (max-width: 768px) {
+        .footer-2 {
+          padding-top: 20px;
+        }
+
+        .footer-2 ul {
+          padding-top: 5px;
+        }
+
+        .footer-2 ul li {
+          padding-top: 20px;
+        }
+
+        .footer-2 ul li a {
+          font-size: 14px;
+          color: #9b99b8;
+        }
+      }
+
+      .footer-3 .title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #403e66;
+      }
+
+      .footer-3 iframe {
+        padding-top: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-3 {
+          margin-top: 30px;
+        }
+
+        .footer-3 iframe {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        footer #footer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-1 {
+          max-width: 1000px;
+        }
+      }
+
+      .date {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+
+      .date p {
+        font-size: 14px;
+      }
+
+      .date p span {
+        font-weight: 500;
+      }
+      #privacy {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      #privacy h1 {
+        color: #403e66;
+        font-size: 40px;
+        font-weight: 800;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        letter-spacing: 2px;
+      }
+      #privacy p {
+        color: #444444;
+        line-height: 25px;
+        font-family: 200;
+        text-align: left;
+        padding-top: 20px;
+      }
+      #privacy li {
+        position: relative;
+        padding-block: 5px;
+        left: 40px;
+        color: #444444;
+        padding-inline: 10px;
+      }
+      @media (max-width: 768px) {
+        #privacy {
+          padding-top: 60px;
+          padding-bottom: 60px;
+          max-width: 100%;
+          padding-inline: 20px;
+        }
+
+        #privacy h1 {
+          font-size: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        #privacy p {
+          font-size: 14px;
+        }
+
+        #privacy li {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="bar">
+      <div class="top-bar">
+        <p class="text">Follow us on</p>
+        <div>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-facebook icon"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-instagram icon"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="nav">
+      <nav id="navbar">
+        <div class="nav-logo">
+          <img
+            src="https://conceptxmm.com/img/Logo_Black.png"
+            alt="ConceptX Logo"
+          />
+          <p>CONCEPTX</p>
+        </div>
+        <div class="nav-items">
+          <ul>
+            <li><a href="/index.html" class="active">HOME</a></li>
+            <li><a href="/privacy.html">PRIVACY</a></li>
+            <li><a href="/">TERMS OF USE</a></li>
+            <li><a href="#contact-us">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </section>
+    <section id="privacy">
+      <div>
+        <h1>Privacy policy</h1>
+        <p>This Privacy Policy was last updated on 27th June 2022.</p>
+        <p>
+          ConceptX, (“ConceptX”, “we”, “us”) regards your privacy rights as one
+          of your fundamental rights. The purpose of this privacy policy
+          (“Privacy Policy”) is to help you understand how we collect, use,
+          share and retain data about you. This privacy policy (“Privacy
+          Policy”) complies when you use our Services (as mentioned in our Terms
+          of Use) provided thorough our website https://www.conceptxmm.com and
+          any websites or applications we own, operate or control. This Privacy
+          Policy explains our treatment on your data, our data collection
+          practices and describes your rights to access, correct, or restrict
+          our use of your personal data.
+        </p>
+        <p>
+          By using the Services (as mentioned in our Terms of Use), you agree to
+          the terms of this Privacy Policy. Please read this Privacy Policy and
+          our Term of Use thoroughly since they govern your use of ConceptX. You
+          may not use ConceptX if you don’t agree to our Privacy Policy and Term
+          of Use.
+        </p>
+      </div>
+      <div>
+        <h1>Information Collection and Use</h1>
+        <p>
+          For a better experience, while using our Service, we may require you
+          to provide us with certain personally identifiable information,
+          including but not limited to User's Phone Number, Email, Name, Device
+          other IDs and Crash logs. The information that we request will be
+          retained by us and used as described in this privacy policy.
+        </p>
+      </div>
+      <div>
+        <h1>Information from Third-Party Social Media Services</h1>
+        <p>
+          The Company allows You to create an account and log in to use the
+          Service through the following Third-party Social Media Services:
+        </p>
+        <ol>
+          <li>Google</li>
+          <li>Facebook</li>
+          <li>Google Analytics for Firebase</li>
+          <li>Firebase Crashlytics</li>
+        </ol>
+        <p>
+          If You decide to register through or otherwise grant us access to a
+          Third-Party Social Media Service, We may collect Personal data that is
+          already associated with Your Third-Party Social Media Service's
+          account, such as Your name, Your email address, Your activities or
+          Your contact list associated with that account.
+        </p>
+        <p>
+          You may also have the option of sharing additional information with
+          the Company through Your Third-Party Social Media Service's account.
+        </p>
+        <p>
+          If You choose to provide such information and Personal Data, during
+          registration or otherwise, You are giving the Company permission to
+          use, share, and store it in a manner consistent with this Privacy
+          Policy.
+        </p>
+      </div>
+      <div>
+        <h1>Log Data</h1>
+        <p>
+          We want to inform you that whenever you use our Service, in a case of
+          an error in the app we collect data and information (through third
+          party products) on your phone called Log Data. This Log Data may
+          include information such as your device Internet Protocol (“IP”)
+          address, device name, operating system version, the configuration of
+          the app when utilizing our Service, the time and date of your use of
+          the Service, and other statistics.
+        </p>
+      </div>
+      <div>
+        <h1>Cookies</h1>
+        <li>
+          Cookies are files with a small amount of data that are commonly used
+          as anonymous unique identifiers. These are sent to your browser from
+          the websites that you visit and are stored on your device's internal
+          memory.
+        </li>
+        <li>
+          This Service does not use these “cookies” explicitly. However, the app
+          may use third party code and libraries that use “cookies” to collect
+          information and improve their services. You have the option to either
+          accept or refuse these cookies and know when a cookie is being sent to
+          your device.
+        </li>
+        <li>
+          If you choose to refuse our cookies, you may not be able to use some
+          portions of this Service.
+        </li>
+      </div>
+      <div>
+        <h1>What We Use your Information for</h1>
+        <p>
+          We use your information for different purposes depending on what kind
+          of information we have collected and about you and the specific
+          services you use. So that, we can
+        </p>
+        <li>Authenticate the users</li>
+        <li>Update about our Services</li>
+        <li>Respond to your requests and communications</li>
+        <li>
+          Provide Services to you like responding to your contact by email,
+          phone (including via SMS messages) regarding ConceptX and third-party
+          products. services, surveys, research studies, promotions, special
+          events and other subjects that we think may be of interest to you
+        </li>
+        <li>
+          Help us better understand your interest and needs and improve our
+          Services.
+        </li>
+      </div>
+      <div>
+        <h1>Who and in which conditions We Share your Information</h1>
+        <p>ConceptX will share your information in following ways:</p>
+        <li>
+          Service Providers: operations and maintenance contractors and other
+          third parties who perform services on our behalf. They are only
+          allowed to access but prohibited from using your information for other
+          purposes.
+        </li>
+        <li>
+          Business Partners: we may share information that can be used to
+          directly contact you with third party business partners such as
+          companies that may be offering products or service or other
+          opportunities that might be your interest.
+        </li>
+        <li>
+          For Advertising: In future, we might use and share certain system data
+          and usage data with third party advertisers and networks to show
+          general demographic and preference information among our users.
+        </li>
+        <li>For Security and Legal Compliance</li>
+        <li>
+          With your permissions or with your consent, we may share certain data
+          to third parties outside the range of this Privacy policy.
+        </li>
+        <p>
+          DE-IDENTIFIED Data: We may do de-identification to some of your
+          information. So that, any information collected through using our
+          Services will no longer related to you or your device. We may use
+          incognito data for any purpose, not only for research and marketing
+          purposes, statistical analyses of Website(s) usage, but also share
+          such data with any third parties, including advertisers, promotional
+          partners and sponsors.
+        </p>
+      </div>
+      <div>
+        <h1>Security</h1>
+        <p>
+          ConceptX prioritize the confidentiality and security of your
+          information than everything. ConceptX works the hardest to protect
+          your information being accessed to or shared by third parties. Please
+          note that we cannot fully guarantee to the security of your
+          information since there is no internet transmission or storage that is
+          completely secure. The length of the time we stored your information
+          in our database depends on the purposes for which we collected and use
+          it if in accordance with applicable laws.
+        </p>
+      </div>
+      <div>
+        <h1>Your legal Right</h1>
+        <p>
+          Followings are your legal rights that your local laws may permit you
+          to request us to:
+        </p>
+        <li>provide access to certain information we hold about you</li>
+        <li>
+          prevent us from using your information for direct-marketing purposes
+        </li>
+        <li>update your information which is incorrect or out of date</li>
+        <li>transfer your information to a third-party provider of services</li>
+        <li>officially stop processing your information with your consent</li>
+        <p>
+          To completely consider all the above requests, certain period stated
+          by applicable law will be required. However, please keep in mind that
+          certain requests may be not considered in some circumstances, which
+          may include if we need to keep processing your information for our
+          legitimate interests or to comply with a legal obligation.
+        </p>
+        <p>
+          Followings are the information that you are required to provide us to
+          help verify your request and prevent fraudulent information and
+          removal requests.
+        </p>
+        <li>provide access to certain information we hold about you</li>
+        <li>
+          prevent us from using your information for direct-marketing purposes
+        </li>
+        <li>update your information which is incorrect or out of date</li>
+        <li>transfer your information to a third-party provider of services</li>
+        <li>officially stop processing your information with your consent</li>
+        <p>
+          Depending on the circumstances and information you request, we may
+          need additional methods of verification in our will.
+        </p>
+      </div>
+    </section>
+    <footer id="contact-us">
+      <div id="footer">
+        <div class="footer-1">
+          <p class="title">CONCEPTX</p>
+          <p class="paragrah">
+            At ConceptX, we focus on creativity and innovation rather than the
+            knowledge that can be found in a book. We have a mantra "Beyond
+            knowledge is thinking". At the very heart of ConceptX, we are to
+            Think, Create and Innovate.
+          </p>
+          <p class="title-1">OUR MISSIONS</p>
+          <p class="paragrah">
+            our mission is to solve the need of students for quality education
+            in the academic areas of Burma by creating free and affordable video
+            content and ebooks.
+          </p>
+        </div>
+        <div class="footer-2">
+          <p class="title">ABOUT US</p>
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">TERMS OF USE</a></li>
+            <li><a href="#">PRIVACY POLICY</a></li>
+          </ul>
+          <p class="contact">CONTACT US</p>
+          <p class="address">
+            103, 38th Street lower block (between Merchant & Mahabandula Road),
+            Kyauktada Yangon
+          </p>
+          <p class="phone">Phone: <span>+959 772 400 031</span></p>
+          <p class="email">Email: <span>info@conceptxmm.com</span></p>
+          <div class="social">
+            <div class="facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </div>
+            <div class="instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-instagram"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="footer-3">
+          <p class="title">CONCEPTX MYANMAR LOCATION</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30555.46286546515!2d96.157347!3d16.804869!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ec7d5865d999%3A0xcb38d0929bdd7f8d!2sConceptX!5e0!3m2!1sen!2smm!4v1720449182736!5m2!1sen!2smm"
+            width="400"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="date">
+        <p>
+          © Copyright <span>2019.</span> All Rights Reserved Designed by
+          CONCEPTX
+        </p>
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

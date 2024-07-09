@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px dotted #efefef;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      h1 {
+        a {
+          color: black;
+          size: 1rem;
+        }
+      }
+      .top-bar {
+        width: 1240px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: end;
+        padding: 10px;
+      }
+
+      .top-bar .text {
+        color: black;
+        font-size: 15px;
+      }
+      nav {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      nav.fixed {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0px;
+        background-color: white;
+        margin-top: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: top 0.3s ease;
+      }
+
+      @media (max-width: 1024px) {
+        nav {
+          margin-top: 10px;
+        }
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .nav-logo img {
+        width: 20px;
+      }
+
+      .nav-logo p {
+        font-size: 15px;
+        color: #3e4449;
+      }
+
+      .nav-items ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-items ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+      }
+
+      .nav-items ul li a:hover {
+        color: #1ab0dc;
+      }
+
+      .nav-items ul li a.active {
+        color: #1ab0dc;
+      }
+
+      @media (max-width: 1024px) {
+        .nav-items {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 250px;
+          height: 100%;
+          background-color: rgba(48, 46, 77, 0.9);
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          transition: left 0.3s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          padding-top: 50px;
+          padding-left: 20px;
+          color: white;
+        }
+
+        .nav-items ul {
+          color: white;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .nav-items ul li a {
+          color: white;
+        }
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      @media (max-width: 1024px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav {
+          display: flex;
+          justify-content: space-between;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-top: 20px;
+        }
+      }
+
+      nav.open .nav-items {
+        left: 0;
+      }
+
+      nav.open .hamburger .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      nav.open .hamburger .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      nav.open .hamburger .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      @media (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+      }
+      footer #footer {
+        padding-top: 50px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f5f8fc;
+      }
+
+      @media (max-width: 768px) {
+        footer #footer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+        }
+      }
+
+      .footer-1 {
+        max-width: 200px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-1 {
+          max-width: 300px;
+        }
+      }
+
+      .footer-1 .title {
+        font-size: 38px;
+        letter-spacing: 2px;
+        padding-bottom: 15px;
+        color: #403e66;
+      }
+
+      .footer-1 .title-1 {
+        font-size: 16px;
+        font-weight: 500;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #403e66;
+      }
+
+      .footer-1 .paragrah {
+        width: 250px;
+        font-size: 14px;
+        line-height: 25px;
+        color: #72708e;
+      }
+
+      .footer-2 .title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #403e66;
+      }
+
+      .footer-2 ul {
+        padding-top: 20px;
+      }
+
+      .footer-2 ul li {
+        padding-top: 10px;
+      }
+
+      .footer-2 ul li a {
+        font-size: 14px;
+        color: #9b99b8;
+      }
+
+      .footer-2 .contact {
+        padding-top: 20px;
+      }
+
+      .footer-2 .address {
+        padding-top: 10px;
+        width: 230px;
+        font-weight: 300;
+        padding-bottom: 20px;
+      }
+
+      .footer-2 .social {
+        padding-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-2 .phone {
+        font-weight: 400;
+        padding-top: 5px;
+      }
+
+      .footer-2 .phone span {
+        font-weight: 300;
+      }
+
+      .footer-2 .email {
+        font-weight: 400;
+        padding-top: 5px;
+      }
+
+      .footer-2 .email span {
+        font-weight: 300;
+      }
+
+      @media (max-width: 768px) {
+        .footer-2 {
+          padding-top: 20px;
+        }
+
+        .footer-2 ul {
+          padding-top: 5px;
+        }
+
+        .footer-2 ul li {
+          padding-top: 20px;
+        }
+
+        .footer-2 ul li a {
+          font-size: 14px;
+          color: #9b99b8;
+        }
+      }
+
+      .footer-3 .title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #403e66;
+      }
+
+      .footer-3 iframe {
+        padding-top: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-3 {
+          margin-top: 30px;
+        }
+
+        .footer-3 iframe {
+          width: auto;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        footer #footer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-1 {
+          max-width: 1000px;
+        }
+      }
+
+      .date {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+
+      .date p {
+        font-size: 14px;
+      }
+
+      .date p span {
+        font-weight: 500;
+      }
+      #terms {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      #terms h1 {
+        color: #403e66;
+        font-size: 45px;
+        font-weight: 800;
+        padding-top: 20px;
+        padding-bottom: 16px;
+        letter-spacing: 2px;
+      }
+      #terms .title {
+        color: #403e66;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 800;
+        padding-top: 20px;
+        padding-bottom: 16px;
+        letter-spacing: 2px;
+      }
+      #terms .address {
+        padding-top: 30px;
+      }
+      #terms h2 {
+        font-style: italic;
+        color: #464646;
+        font-size: 17px;
+        padding-block: 10px;
+      }
+      #terms h6 {
+        color: #444444;
+        font-size: 17px;
+        padding-top: 25px;
+        line-height: 25px;
+        letter-spacing: 1px;
+      }
+      #terms p {
+        color: #444444;
+        line-height: 25px;
+        font-family: 200;
+        text-align: left;
+        padding-top: 15px;
+      }
+      #terms p a {
+        text-decoration: underline;
+        font-weight: 100;
+        letter-spacing: 0;
+        color: #14a2b8;
+      }
+      #terms p span {
+        font-weight: 600;
+      }
+      #terms li {
+        position: relative;
+        padding-block: 5px;
+        left: 30px;
+        color: #444444;
+        padding-inline: 10px;
+      }
+      @media (max-width: 768px) {
+        #terms {
+          padding-top: 60px;
+          padding-bottom: 60px;
+          max-width: 100%;
+          padding-inline: 20px;
+        }
+
+        #terms h1 {
+          font-size: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        #terms p {
+          font-size: 14px;
+        }
+
+        #terms li {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="bar">
+      <div class="top-bar">
+        <p class="text">Follow us on</p>
+        <div>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-facebook icon"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-instagram icon"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="nav">
+      <nav id="navbar">
+        <div class="nav-logo">
+          <img
+            src="https://conceptxmm.com/img/Logo_Black.png"
+            alt="ConceptX Logo"
+          />
+          <p>CONCEPTX</p>
+        </div>
+        <div class="nav-items">
+          <ul>
+            <li><a href="/index.html" class="active">HOME</a></li>
+            <li><a href="/">PRIVACY</a></li>
+            <li><a href="#termsofuse">TERMS OF USE</a></li>
+            <li><a href="#contact-us">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </section>
+    <section id="terms">
+      <div>
+        <h1>Terms of use</h1>
+        <h2>
+          These Terms of Use ("Terms") were last updated on 2nd February 2019.
+        </h2>
+        <p>
+          ConceptX vision is to educate people in Myanmar and to show our
+          culture around the world through education. Our mission is to have the
+          affordable education at all level of people in Myanmar. Therefore, we
+          create quality educational courses in Myanmar language focusing on
+          matriculation exams hoping to break down the barriers of (1) expensive
+          education (2) low-quality educational content, and (3) not easily
+          accessible, for our users. Our platform and services need to be safe
+          for you, us and our community, therefore, we need rules. These Terms
+          shall apply to all your activities on the ConceptX website, the
+          ConceptX mobile applications, our TV applications, our APIs and other
+          related services (“<span> Services</span>”).
+        </p>
+        <h6>
+          If you live in Myanmar, you agree to these Terms through the binding
+          contract with ConceptX and to resolve any disputes if ever happens.
+        </h6>
+      </div>
+      <div>
+        <h1>Accounts</h1>
+        <p>
+          To use most of the activities on our platform, you will need an
+          account such as purchasing the courses, bookmarking the courses,
+          viewing the classmates and refilling the wallet using the payment
+          codes. You must provide a complete and accurate information of phone
+          number, name and email address during account registration and while
+          updating the account bio. You have the full responsibility on whatever
+          happens to your account for someone using your account without your
+          permission which states that you need to be extra careful with your
+          password. You must not transfer your account to another person or use
+          other’s account without their permission, and we will not provide the
+          account you contacted to us unless you could provide enough valid
+          login information for that account. In case of death of the user, the
+          account will be closed.
+        </p>
+        <p>
+          You will have to take your own responsibility for anything that might
+          happen if you share your login account information with anyone, and
+          there will be no association with ConceptX. Notify to our
+          <a href="/">TECH TEAM</a> immediately if you suspect anyone using your
+          account without your permission.
+        </p>
+        <p>
+          To use our platforms and Services, students must be at least 14 years
+          of age. If you are younger than the required age, we strongly advise
+          you to get help from your guardians or parents to open an account and
+          enroll courses. Your account will be terminated if we identify that
+          you do not meet the required age.
+        </p>
+        <p>
+          To use our platforms and Services, students must be at least 14 years
+          of age. If you are younger than the required age, we strongly advise
+          you to get help from your guardians or parents to open an account and
+          enroll courses. Your account will be terminated if we identify that
+          you do not meet the required age.
+        </p>
+        Your account can be terminated by following these <a href="">STEPS</a> .
+        See our <a href="">PRIVACY POLICY</a> what happens when you terminate
+        your account.
+      </div>
+      <div>
+        <h1>Course License and 1-Year Access</h1>
+        <p>
+          Through ConceptX, if an instructor publishes a course, then a license
+          and certificate(s) depending on the course (not every course has a
+          certificate) will be granted along with the published course to the
+          students. Most courses have a license of 1-year access, but it depends
+          on the agreement between ConceptX and the instructor. For some
+          courses, you will have to take physical exams to get the certificate
+          after taking the online course work from ConceptX platform and
+          Services. This can view under our
+          <a href="/">INSTRUCTOR AGREEMENT</a> . Whether it is free or paid
+          courses, you are granted with the license of the course from ConceptX.
+          With this license, you do not have the right to resell, redistribute,
+          share on any type of platforms or social medias, illegally downloading
+          the course, any kind of screen recording or video recording.
+        </p>
+
+        <p>
+          Through ConceptX, if an instructor publishes a course, then a license
+          and certificate(s) depending on the course (not every course has a
+          certificate) will be granted along with the published course to the
+          students. Most courses have a license of 1-year access, but it depends
+          on the agreement between ConceptX and the instructor. For some
+          courses, you will have to take physical exams to get the certificate
+          after taking the online course work from ConceptX platform and
+          Services. This can view under our
+          <a href="/">INSTRUCTOR AGREEMENT</a> . Whether it is free or paid
+          courses, you are granted with the license of the course from ConceptX.
+          With this license, you do not have the right to resell, redistribute,
+          share on any type of platforms or social medias, illegally downloading
+          the course, any kind of screen recording or video recording.
+        </p>
+        <p>
+          For the courses, we would generally give a 1-year license for the
+          students who enroll. However, we take the right to terminate any
+          license to access and the use of the courses at any particular time if
+          we find the users or we decide that it was due to the violation of the
+          legal or policy reasons; example, if the course you enrolled in is
+          concern with copyright violation, or if violates our
+          <a href="/">TRUST & SAFETY GUIDELINES</a> . Add-on features, and
+          services related with the courses of the 1-year access such as
+          quizzes, homework, exams, textbook and other resources in pdf or some
+          videos that are not directly related with the course content may be
+          disabled by the instructors at any time whenever the instructor
+          decided to.
+        </p>
+        <p>
+          No instructors should grant licenses to the students directly to have
+          access of their courses and any such direct license shall be
+          terminated and a violation of these Terms.
+        </p>
+      </div>
+      <div>
+        <h1 class="title">Pricing, and Payments</h1>
+        <h1>Pricing</h1>
+        <p>
+          The prices of courses on ConcepX are determined by the agreement
+          between ConceptX and instructors based on
+          <a href="/">INSTRUCTOR AGREEMENT</a> and our
+          <a href="">PRICING AND PROMOTIONS POLICY</a> .
+        </p>
+        <p>
+          The price may include taxes such as sales tax, goods and services tax,
+          or value added tax that is applicable to consumer sales as we are
+          responsible for collecting and paying the tax to the proper tax
+          authorities.
+        </p>
+      </div>
+      <div>
+        <h1>Payments</h1>
+        <p>
+          You are agree to pay the fees for the courses you purchase through
+          Xcode (code to refill digital money to buy courses only from ConceptX)
+          or through the payment systems of third-party payment and mobile
+          wallet. Third party payment would be categorized into four main types
+          (1) through the mobile carrier (example MPT) (2) through bank transfer
+          (example AYA) (3) through mobile money services (example Wavemoney),
+          and (4) through debit or credit card.
+        </p>
+        <p>
+          From payment options (2) and (3) you have to make the payment through
+          those services of our accounts and send us the receipt of the payment
+          through Viber or messenger to get the ConceptX money code.
+        </p>
+        <p>
+          For any payments you choose, you agree to pay the courses fees. If the
+          payment is by debit or credit card, then you authorize us to charge
+          your cards. Check out our Privacy Policy for your payment information
+          security.
+        </p>
+        <p>
+          You shall provide the valid information or authorized payment method.
+          For any causes of failure in your payment, you will not get the access
+          to the course you are trying to purchase.
+        </p>
+      </div>
+      <div>
+        <h1>Content and Behavior Rules</h1>
+        <p>
+          You shall not use the services of ConceptX account for any unlawful
+          purposes. Your use of Services on our platform must follow the
+          national laws and regulations of your country. It is your own
+          responsibility to be in compliance with the national laws and
+          regulations.
+        </p>
+        <p>
+          The services allow the students to make a review on every course they
+          take after they have completed a certain period of time depending on
+          the courses.
+        </p>
+        <p>
+          If we notice in any means that the course you are taking violates the
+          law or the rights of others (example, violation of intellectual
+          property) or for any violation of inappropriate use of our courses and
+          brand, or if we notice any fraudulent or illegal activities then we
+          may remove you from our platform. ConceptX is in compliance with
+          copyright laws, please see our
+          <a href="/">INTELLECTUAL PROPERTY POLICY.</a>
+        </p>
+        <p>
+          If any of our instructors plagiarize anyone’s work or your work, then
+          please let us know. We require intellectual property rights of others
+          under our <a href="/">INSTRUCTOR AGREEMENT</a> , please see our
+          <a href="/"> INTELLECTUAL PROPERTY POLICY</a>
+        </p>
+      </div>
+      <div>
+        <h1>ConceptX’s Rights to Content You Post</h1>
+        <p>
+          An instructor always owns its courses, but ConceptX may reuse or share
+          it on any of our platforms and Services. An instructor should
+          understand the course licensing terms of the
+          <a href="/">INSTRUCTOR AGREEMENT</a> .
+        </p>
+        <p>
+          If you make reviews to the courses, we may use or share it with
+          anyone, distribute it and promote it on any platform, and social
+          media, and use in videos or even commercially so as to improve our
+          ConceptX platform under the legal laws and rights of Myanmar.
+        </p>
+      </div>
+      <div>
+        <h1>Contact us</h1>
+        <p>
+          Our Support Team is the best way to get in touch and always be there
+          to assist you with any help you needed. Please let us know your
+          valuable questions and feedback about our services.
+        </p>
+        <p class="adress">Thank You!</p>
+        <p class="address">Email:info@conceptxmm.com</p>
+        <p class="address">ConceptX Co, Ltd.</p>
+        <p class="address">
+          103, 38th Street lower block (between Merchant & Mahabandula Road),
+          Kyauktada Yangon
+        </p>
+      </div>
+    </section>
+    <footer id="contact-us">
+      <div id="footer">
+        <div class="footer-1">
+          <p class="title">CONCEPTX</p>
+          <p class="paragrah">
+            At ConceptX, we focus on creativity and innovation rather than the
+            knowledge that can be found in a book. We have a mantra "Beyond
+            knowledge is thinking". At the very heart of ConceptX, we are to
+            Think, Create and Innovate.
+          </p>
+          <p class="title-1">OUR MISSIONS</p>
+          <p class="paragrah">
+            our mission is to solve the need of students for quality education
+            in the academic areas of Burma by creating free and affordable video
+            content and ebooks.
+          </p>
+        </div>
+        <div class="footer-2">
+          <p class="title">ABOUT US</p>
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">TERMS OF USE</a></li>
+            <li><a href="#">PRIVACY POLICY</a></li>
+          </ul>
+          <p class="contact">CONTACT US</p>
+          <p class="address">
+            103, 38th Street lower block (between Merchant & Mahabandula Road),
+            Kyauktada Yangon
+          </p>
+          <p class="phone">Phone: <span>+959 772 400 031</span></p>
+          <p class="email">Email: <span>info@conceptxmm.com</span></p>
+          <div class="social">
+            <div class="facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-facebook"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </div>
+            <div class="instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-instagram"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="footer-3">
+          <p class="title">CONCEPTX MYANMAR LOCATION</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30555.46286546515!2d96.157347!3d16.804869!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ec7d5865d999%3A0xcb38d0929bdd7f8d!2sConceptX!5e0!3m2!1sen!2smm!4v1720449182736!5m2!1sen!2smm"
+            width="400"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="date">
+        <p>
+          © Copyright <span>2019.</span> All Rights Reserved Designed by
+          CONCEPTX
+        </p>
+      </div>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>
