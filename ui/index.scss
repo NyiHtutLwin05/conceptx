@@ -11,19 +11,26 @@ $breakpoint-mobile: 767px;
 .icon {
   color: $primary;
 }
-main {
-  background-color: #f5f5f5;
+.container {
   position: relative;
-  overflow: hidden;
-  .curved {
-    position: relative;
-    width: 100%;
-    height: 150px; // Adjust height as needed
-    background: #595adc;
-    clip-path: path(
-      "M0 0 Q50% 100% 100% 0 T200% 0 v150h-100%v-150z"
-    ); // Create wave path
+  background-color: #f5f5f5;
+
+  .svg {
+    width: auto;
+    height: 100%;
+    margin-top: -110px;
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: 10px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 10px;
+    }
+    svg {
+      height: 100%;
+      width: 100%;
+    }
   }
+
   .top-bar {
     width: 1320px;
     display: flex;
@@ -42,6 +49,20 @@ main {
   }
 
   nav {
+    position: relative;
+    &.fixed {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      top: 0px;
+      background-color: white;
+      margin-top: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: top 0.3s ease;
+    }
+
     @media (max-width: $breakpoint-tablet) {
       margin-top: 10px;
     }
@@ -70,9 +91,12 @@ main {
           a {
             text-decoration: none;
             color: #000;
-            font-size: 16px;
+            font-size: 14px;
 
             &:hover {
+              color: #1ab0dc;
+            }
+            &.active {
               color: #1ab0dc;
             }
           }
@@ -85,16 +109,23 @@ main {
         left: -100%;
         width: 250px;
         height: 100%;
-        background-color: #fff;
+        background-color: rgba(48, 46, 77, 0.9);
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         transition: left 0.3s ease-in-out;
         display: flex;
         flex-direction: column;
         padding-top: 50px;
-
+        padding-left: 20px;
+        color: white;
         ul {
+          color: white;
           flex-direction: column;
-          gap: 15px;
+          gap: 30px;
+          li {
+            a {
+              color: white;
+            }
+          }
         }
       }
     }
@@ -144,8 +175,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 200px;
-    margin-bottom: 50px;
+    margin-top: 150px;
+
     @media (max-width: $breakpoint-mobile) {
       display: flex;
       flex-direction: column-reverse;
@@ -162,9 +193,9 @@ main {
         }
       }
       p {
-        font-weight: 700;
+        font-weight: 800;
         color: $text-primary;
-        font-size: 45px;
+        font-size: 50px;
         span {
           display: none;
         }
@@ -197,35 +228,67 @@ main {
           justify-content: center;
         }
       }
-      button {
-        background: $primary;
-        width: 200px;
-        text-align: center;
-        height: 50px;
-        margin-top: 20px;
-        color: $text-primary;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        justify-content: center;
+      .button {
+        position: relative;
 
-        p {
-          margin: 0;
-          font-size: 15px;
-          letter-spacing: 3px;
+        button {
+          position: relative;
+          width: 200px;
+          text-align: center;
+          height: 50px;
+          margin-top: 20px;
+          color: $text-primary;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+          justify-content: center;
+          background-color: transparent;
+          overflow: hidden;
+          svg {
+            z-index: 1;
+          }
+          p {
+            margin: 0;
+            font-size: 15px;
+            letter-spacing: 3px;
+            position: relative;
+
+            z-index: 1;
+          }
         }
-        svg {
-          width: 24px;
-          height: 24px;
+
+        .bg {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          top: 50%; /* Center vertically */
+          left: 8%;
+          transform: translate(-50%, -50%);
+          background-color: #595adc;
+          transition: all 0.3s ease;
+          z-index: 0; /* Ensure circle is behind text */
+          border-radius: 50%;
+          @media (max-width: $breakpoint-mobile) {
+            top: 60%;
+            left: 20%;
+          }
+        }
+        &:hover {
+          .bg {
+            width: 190px;
+            height: 50px; /* Start position from middle */
+            transform: translate(-10%, -50%);
+            border-radius: 50px; /* Circular shape */
+          }
         }
       }
     }
     .hero-img {
       img {
-        box-shadow: 0px 10px 8px rgba(0, 0, 0, 1.1);
+        box-shadow: 1px 1px 23px 12px rgba(0, 0, 0, 0.75);
         width: 538px;
         height: 399px;
         @media (max-width: $breakpoint-mobile) {
@@ -243,7 +306,7 @@ main {
   }
 }
 #story {
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 100px;
   @media (max-width: $breakpoint-mobile) {
     padding-top: 10px;
@@ -270,6 +333,30 @@ main {
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
+    .story-img {
+      position: relative;
+      .text-container-hover {
+        h1 {
+          color: white;
+          background-color: #403e66;
+        }
+        p {
+          color: white;
+          background-color: #403e66;
+        }
+        opacity: 0;
+        position: absolute;
+        top: 13rem;
+        left: 3rem;
+        bottom: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      &:hover {
+        .text-container-hover {
+          opacity: 1;
+        }
+      }
+    }
     .text-mobile {
       display: none;
     }
@@ -312,7 +399,45 @@ main {
           display: none;
         }
       }
+      .button-container {
+        position: relative;
+        margin-top: 50px;
+        .grey-1 {
+          position: absolute;
+          background-color: #f5f5f5;
+          width: 140px;
+          height: 35px;
+          transform: skew(20deg);
+          z-index: -1;
+          top: -30px;
+          left: -10px;
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover {
+          .grey-1 {
+            top: -5px;
+            left: 100px;
+          }
+        }
 
+        .purple {
+          position: absolute;
+          left: 102px;
+          top: -5px;
+          background-color: #595adc;
+          width: 140px;
+          height: 35px;
+          transform: skew(20deg);
+          z-index: -1;
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover {
+          .purple {
+            top: -5px;
+            left: -30px;
+          }
+        }
+      }
       .title {
         color: $text-title;
         font-style: italic;
@@ -327,9 +452,9 @@ main {
       button {
         border: none;
         background: none;
-        margin-top: 20px;
+        z-index: 1;
         font-size: 20px;
-        font-weight: 300;
+        font-weight: 200;
         letter-spacing: 5px;
       }
     }
@@ -432,8 +557,50 @@ main {
     .para-2 {
       padding-bottom: 35px;
     }
+    .button-container {
+      position: relative;
+      margin-top: 50px;
+      .grey-1 {
+        position: absolute;
+        background-color: #f5f5f5;
+        width: 140px;
+        height: 35px;
+        transform: skew(20deg);
+        z-index: -1;
+        top: -30px;
+        left: -10px;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        .grey-1 {
+          top: -5px;
+          left: 100px;
+          width: 100px;
+          height: 35px;
+        }
+      }
+
+      .purple {
+        position: absolute;
+        left: 102px;
+        top: -5px;
+        background-color: #595adc;
+        width: 140px;
+        height: 35px;
+        transform: skew(20deg);
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        .purple {
+          top: -5px;
+          left: -30px;
+          width: 100px;
+          height: 35px;
+        }
+      }
+    }
     button {
-      margin-top: 30px;
       border: none;
       background: none;
       cursor: pointer;
